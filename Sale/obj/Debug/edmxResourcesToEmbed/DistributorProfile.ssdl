@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VPassModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuthorizerProfile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="MemberID" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="ConactNum" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'VPass.dbo.ProductDetails' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ProductDetails">
+          <Property Name="ProductID" Type="varchar" MaxLength="50" />
+          <Property Name="ProductName" Type="varchar" MaxLength="50" />
+          <Property Name="ProductImage" Type="varchar(max)" />
+          <Property Name="ProductPrice" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'VPass.dbo.PurchaseOreder' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="PurchaseOreder">
+          <Property Name="status" Type="varchar" MaxLength="60" />
+        </EntityType>-->
+  <EntityType Name="tbl_DistributorLogin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="MemberID" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Contact" Type="int" />
+    <Property Name="Adress" Type="varchar" MaxLength="100" />
+    <Property Name="EmailID" Type="varchar" MaxLength="100" />
+    <Property Name="LoginID" Type="varchar" MaxLength="100" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="TinNo" Type="varchar" MaxLength="50" />
+    <Property Name="PanNo" Type="varchar" MaxLength="50" />
+    <Property Name="BankIFSC" Type="varchar" MaxLength="20" />
+    <Property Name="CreditLimit" Type="varchar" MaxLength="100" />
+    <Property Name="SecurityQuestion" Type="varchar" MaxLength="100" />
+    <Property Name="SecurityAnswer" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="VPassModelStoreContainer">
+    <EntitySet Name="AuthorizerProfile" EntityType="Self.AuthorizerProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_DistributorLogin" EntityType="Self.tbl_DistributorLogin" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
